@@ -1,0 +1,20 @@
+[build-system]
+requires = ["maturin>=1.5,<2"]
+build-backend = "maturin"
+
+[project]
+name = "opencamlib"
+description = "OpenCAMLib toolpath algorithms (drop-cutter, push-cutter, waterline), implemented in Rust"
+requires-python = ">=3.9"
+license = { text = "LGPL-2.1-or-later" }
+dynamic = ["version"]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)",
+]
+
+[tool.maturin]
+module-name = "opencamlib.ocl"
+python-source = "python"
+features = ["pyo3/extension-module"]

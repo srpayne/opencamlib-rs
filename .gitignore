@@ -1,0 +1,5 @@
+/target
+Cargo.lock
+# Python extension built by `maturin develop`
+/python/python/opencamlib/*.so
+__pycache__/

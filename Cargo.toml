@@ -1,0 +1,25 @@
+[package]
+name = "opencamlib"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+description = "A Rust port of OpenCAMLib: drop-cutter, push-cutter and waterline toolpath algorithms for CNC machining"
+license = "LGPL-2.1-or-later"
+repository = "https://github.com/aewallin/opencamlib"
+keywords = ["cam", "cnc", "toolpath", "waterline", "stl"]
+categories = ["algorithms", "science", "mathematics"]
+readme = "README.md"
+
+[workspace]
+members = ["python"]
+
+[features]
+default = ["parallel"]
+# Use rayon for the batch algorithms (replaces OpenMP in the C++ version).
+parallel = ["dep:rayon"]
+
+[dependencies]
+rayon = { version = "1.10", optional = true }
+
+[profile.test]
+opt-level = 2

@@ -1,0 +1,18 @@
+[package]
+name = "opencamlib-python"
+version = "0.1.0"
+edition = "2021"
+description = "Python bindings for the Rust port of OpenCAMLib, mirroring the original `opencamlib` Python API"
+license = "LGPL-2.1-or-later"
+publish = false
+
+[lib]
+name = "ocl"
+crate-type = ["cdylib"]
+
+[dependencies]
+opencamlib = { path = ".." }
+pyo3 = { version = "0.25.1", features = ["extension-module", "abi3-py39"] }
+
+[build-dependencies]
+pyo3-build-config = "0.25.1"
